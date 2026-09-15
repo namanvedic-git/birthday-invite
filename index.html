@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A little plan 💗</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="shell">
+  <section class="card" id="app">
+    <div class="icon" id="icon">💗</div>
+
+    <div id="page1" class="page active">
+      <h1>I want to make your birthday special... 💗</h1>
+      <p class="sub">I have a little plan for 26 November.</p>
+      <div class="buttons" id="runawayZone">
+        <button class="btn primary" id="yesBtn">YES 💗</button>
+        <button class="btn secondary runaway" id="noBtn">NO 🥺</button>
+      </div>
+      <p class="hint" id="hint">Don't try to tap NO 😏</p>
+    </div>
+
+    <div id="page2" class="page">
+      <h1>Wait... you actually said YES?? 😭</h1>
+      <button class="btn primary wide" id="okayBtn">okay okay! →</button>
+    </div>
+
+    <div id="page3" class="page">
+      <h1>I want to pick you up from your home. 💗</h1>
+      <p class="sub">Pick a time and tell me where I should meet you. ⏰ I want to come to your home first and give you a gift. 🎁</p>
+
+      <div class="choice-grid">
+        <button class="place" data-place="Hometown">🏠 Hometown</button>
+        <button class="place" data-place="Pune wala ghar">🏙️ Pune wala ghar</button>
+      </div>
+
+      <label class="field-label" for="time">Pick a time ⏰</label>
+      <input id="time" class="field" type="time">
+
+      <label class="field-label" for="address">Meeting address 📍</label>
+      <textarea id="address" class="field textarea" rows="3" placeholder="Apna pura address likho..."></textarea>
+
+      <button class="location" id="locationBtn" type="button">📍 Use my current location</button>
+      <p class="location-status" id="locationStatus"></p>
+
+      <button class="btn primary wide submit" id="submitBtn">Continue →</button>
+      <p class="form-error" id="formError"></p>
+    </div>
+
+    <div id="page4" class="page">
+      <h1>What are we feeling? 💗✨</h1>
+      <p class="sub">pick your vibe</p>
+      <div class="feeling-grid">
+        <button class="feeling" data-feeling="Excited">😍<span>Excited</span></button>
+        <button class="feeling" data-feeling="Happy">🥰<span>Happy</span></button>
+        <button class="feeling" data-feeling="Peaceful">😌<span>Peaceful</span></button>
+        <button class="feeling" data-feeling="Emotional">🥹<span>Emotional</span></button>
+        <button class="feeling" data-feeling="Shy">😳<span>Shy</span></button>
+        <button class="feeling" data-feeling="Playful">😜<span>Playful</span></button>
+      </div>
+    </div>
+
+    <div id="page5" class="page">
+      <h1>Glad you didn't say no. Be ready by 8, I'm coming to get you 🚗</h1>
+      <p class="sub ps">ML normal people text. I made a website for you. Not big deal.</p>
+      <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+      <button class="btn primary wide" id="acceptBtn">ok I accept 💝</button>
+    </div>
+
+    <div id="page6" class="page">
+      <div class="fee-icon">💳</div>
+      <h1>one small fee</h1>
+      <p class="sub">to confirm your acceptance of this surprise, please complete the following transaction, totally normal. everyone does this.</p>
+      <div class="fee-box"><b>First surprise</b><strong>$499</strong><small>one-time fee • non-refundable • absolutely worth it</small></div>
+      <button class="btn primary wide" id="payBtn">pay $499 &amp; confirm 💝</button>
+      <button class="back-link" id="backBtn">go back</button>
+    </div>
+
+    <div id="done" class="page">
+      <div class="done-icon">🥰</div>
+      <h2>Perfect. It's a surprise! ❤️</h2>
+      <p class="sub">Your plan has been saved.</p>
+    </div>
+  </section>
+</main>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invite Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<header><h1>Invite Dashboard</h1><p>26 November birthday invite • v3 final</p></header>
+<main>
+  <div class="stats">
+    <div><b id="opens">0</b><span>Opens</span></div>
+    <div><b id="yes">0</b><span>YES</span></div>
+    <div><b id="dodges">0</b><span>NO dodges</span></div>
+    <div><b id="submits">0</b><span>Responses</span></div>
+  </div>
+  <section class="panel">
+    <div class="panel-head"><h2>Latest activity</h2><button id="refresh">Refresh</button></div>
+    <div id="events"></div>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><h2>Response</h2><button id="clear">Clear local data</button></div>
+    <pre id="response">No response yet.</pre>
+  </section>
+  <p class="note">This dashboard's local view reads activity stored in this browser. For activity from the recipient's phone, connect the app to Supabase using the included SQL schema and config.</p>
+</main>
+<script src="config.js"></script><script src="dashboard.js"></script>
+</body>
+</html>

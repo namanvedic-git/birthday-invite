@@ -1,0 +1,38 @@
+*{box-sizing:border-box}
+:root{font-family:Georgia,"Times New Roman",serif;color:#71384d}
+html,body{margin:0;min-height:100%;background:#f6e0c8}
+body{min-height:100svh;display:grid;place-items:center;padding:18px;overflow:auto}
+.shell{width:100%;display:flex;justify-content:center}
+.card{position:relative;width:min(100%,470px);min-height:590px;padding:42px 28px 30px;background:rgba(255,249,233,.95);border-radius:28px;box-shadow:0 18px 55px rgba(90,35,55,.15);text-align:center}
+.icon{width:92px;height:92px;margin:0 auto 18px;border-radius:20px;display:grid;place-items:center;background:#df5e8e;font-size:45px;box-shadow:0 9px 22px rgba(180,70,115,.18)}
+h1{margin:0 auto;max-width:390px;font-size:clamp(27px,7vw,40px);line-height:1.14}
+h2{font-size:32px;margin:15px 0 8px}
+.sub{font-size:16px;line-height:1.5;color:#9a6c7d;margin:13px auto 0;max-width:400px}
+.page{display:none}.page.active{display:block}
+.buttons{position:relative;width:min(100%,350px);height:92px;margin:25px auto 0;display:flex;align-items:center;justify-content:center;gap:17px;overflow:visible}
+.btn,.place,.location,.feeling,.back-link{font:700 15px system-ui,-apple-system,sans-serif;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.btn{min-width:112px;min-height:50px;padding:13px 21px;border-radius:999px}
+.primary{color:#fff;background:#d83f7b;box-shadow:0 8px 20px rgba(190,50,105,.22)}
+.secondary{color:#71384d;background:#f0dce4}
+.runaway{position:relative;z-index:4;will-change:transform;transition:transform 145ms cubic-bezier(.18,.78,.2,1)}
+.hint{font:12px system-ui;color:#b48696;margin:3px auto 0}
+.wide{width:min(100%,290px)}
+#page2 h1{margin-bottom:20px}
+#page2 .wide{margin-top:0}
+.couple-img{display:block;width:118px;height:118px;margin:0 auto 17px;border-radius:22px;background:#df5e8e;box-shadow:0 9px 22px rgba(180,70,115,.18)}
+#page3 h1{max-width:400px}
+#page3 .sub{margin-top:12px}
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 17px}
+.place{min-height:58px;border-radius:16px;background:#f5e6eb;color:#71384d;padding:10px;border:2px solid transparent}.place.selected{border-color:#d83f7b;background:#fae5ed}
+.field-label{display:block;text-align:left;margin:10px 2px 5px;font:700 13px system-ui;color:#7e5262}
+.field{width:100%;border:1px solid #ddc8d0;border-radius:12px;background:#fff;padding:13px 14px;color:#4b3039;font:15px system-ui;outline:none}.field:focus{border-color:#d83f7b;box-shadow:0 0 0 3px rgba(216,63,123,.10)}
+.textarea{resize:none}.location{width:100%;margin-top:9px;padding:12px;border-radius:12px;background:#f7eef1;color:#7b4e5e}.location-status{min-height:18px;margin:5px 0;font:12px system-ui;color:#8e6573}.submit{margin-top:10px}.form-error{min-height:20px;margin:7px 0 0;font:12px system-ui;color:#b32258}
+.feeling-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:22px}.feeling{min-height:70px;border-radius:15px;background:#f5e6eb;color:#71384d;padding:9px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.feeling span{font:700 13px Georgia}.feeling.selected{border:2px solid #d83f7b;background:#fae5ed}
+.ps{max-width:350px}.hearts{margin:28px 0 24px;letter-spacing:7px;color:#d56a8d;font-size:18px}.fee-icon{font-size:40px;margin-bottom:14px}.fee-box{margin:22px auto;padding:18px 16px;border:1px solid #d8c2c9;border-radius:16px;max-width:370px;text-align:left}.fee-box b{font:700 20px Georgia}.fee-box strong{float:right;font:700 24px Georgia;color:#b02e62}.fee-box small{display:block;margin-top:10px;color:#8f6b77}.back-link{background:transparent;color:#8e6874;margin-top:12px;padding:7px 14px}.done-icon{font-size:65px;margin-top:75px}
+@media(max-width:390px){.card{padding:35px 18px 25px;min-height:570px}.icon{width:78px;height:78px;font-size:38px}.couple-img{width:92px;height:92px}.choice-grid{gap:7px}.btn{min-width:103px}.feeling-grid{gap:7px}}
+
+.icon.hidden{display:none}
+.party-rain{position:fixed;inset:0;z-index:9999;pointer-events:none;overflow:hidden}
+.party-piece{position:absolute;top:-28px;display:block;font-family:system-ui,sans-serif;font-weight:900;line-height:1;opacity:.95;animation:partyFall linear forwards;transform:translate3d(0,0,0) rotate(0deg)}
+@keyframes partyFall{0%{transform:translate3d(0,-25px,0) rotate(0deg);opacity:0}8%{opacity:1}100%{transform:translate3d(var(--drift),110vh,0) rotate(var(--spin));opacity:0}}
+#backBtn{position:relative;will-change:transform;transition:transform 150ms cubic-bezier(.18,.78,.2,1)}
