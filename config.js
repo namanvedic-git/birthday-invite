@@ -15,7 +15,7 @@
   };
 */
 window.APP_CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: "",
+  SUPABASE_URL:"https://dgsqggnsycbykuepezgd.supabase.co",
+  SUPABASE_ANON_KEY:"sb_publishable_v7QmjA1cN7h0dwnysRr0uQ_FdiLmaj5",
   INVITE_ID: "birthday-26-nov"
 };
