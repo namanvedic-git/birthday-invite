@@ -155,10 +155,42 @@ async function signOut(){
 $("loginForm").addEventListener("submit", signIn);
 $("refresh").addEventListener("click", refresh);
 $("logout").addEventListener("click", signOut);
-$("clear").addEventListener("click", () => {
+async function clearCloud(){
+  if(!client) return;
+
+  const { data:{session} } = await client.auth.getSession();
+  if(!session){
+    setLoggedIn(false);
+    return;
+  }
+
+  const ok = confirm("⚠️ Delete all cloud activity and responses for this invite?");
+  if(!ok) return;
+
+  const [eventResult, responseResult] = await Promise.all([
+    client.from("invite_events").delete().eq("invite_id", INVITE_ID),
+    client.from("invite_responses").delete().eq("invite_id", INVITE_ID)
+  ]);
+
+  if(eventResult.error) throw eventResult.error;
+  if(responseResult.error) throw responseResult.error;
+
+  eventsCache = [];
+  responsesCache = [];
   localStorage.removeItem(STORAGE_KEY);
   localStorage.removeItem(RESPONSE_KEY);
   render();
+
+  alert("Cloud data cleared successfully.");
+}
+
+$("clearCloud").addEventListener("click", async () => {
+  try {
+    await clearCloud();
+  } catch(error) {
+    console.error(error);
+    alert("Could not clear cloud data: " + (error.message || error));
+  }
 });
 
 if(cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY && window.supabase){
