@@ -148,7 +148,7 @@ document.getElementById("submitBtn").addEventListener("click",()=>{
   if(!address && !locationData){error.textContent="Please enter the address or share your location.";return;}
   const response={session_id:sessionId,invite_id:cfg.INVITE_ID,time,place:selectedPlace,address:address||null,location:locationData,submitted_at:new Date().toISOString()};
   localStorage.setItem(RESPONSE_KEY,JSON.stringify(response));
-  logEvent("form_submitted",{place:selectedPlace,time,address_entered:!!address,location_shared:!!locationData});
+  logEvent("form_submitted",{place:selectedPlace,time,address:address || null,address_entered:!!address,location_shared:!!locationData});
   if(cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY) sendResponse(response);
   showPage(3);
 });
